@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to the Page</title>
+    <style type="text/css">
+        /* General Reset */
+        body, h1, p {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Page Layout */
+        body {
+            background-color: #f7f7f7;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        /* Heading Styling */
+        h1 {
+            font-size: 30px;
+            font-weight: bold;
+            color: #007BFF;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Message Styling */
+        p {
+            font-size: 18px;
+            text-align: center;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        /* Button Styling */
+        .responsive-btn {
+            padding: 15px 30px;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Hover Effect */
+        .responsive-btn:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 24px;
+            }
+            p {
+                font-size: 16px;
+            }
+            .responsive-btn {
+                font-size: 18px;
+                padding: 12px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+<h1>Welcome to the Page</h1>
+<p>Please wait for 5 seconds or click on the screen</p>
+
+<script>
+    // Direct URLs
+    let directLink = "https://contingentsolemnlykettle.com/kv4u8gs2me?key=db2423428b23027b1bf8b3a18ca7a1f5";
+    let popunderScriptURL = "https://contingentsolemnlykettle.com/d4/20/f9/d420f9de521ccfe13b9ab74021919a39.js";
+    let socialBarScriptURL = "https://contingentsolemnlykettle.com/4c/da/fb/4cdafb534e6a38d89d27c2341c4e026f.js";
+
+    // Redirect after 5 seconds
+    setTimeout(function () {
+        window.location.href = directLink;
+    }, 5000);
+
+    // Open in a new tab on user click
+    document.addEventListener("click", function () {
+        let popup = window.open(directLink, "_blank");
+        if (!popup) {
+            alert("Popup was blocked! Please allow popups.");
+        }
+    });
+
+    // Prevent back button navigation
+    window.history.pushState({ page: "home" }, "home", window.location.href);
+    window.onpopstate = function () {
+        window.location.href = directLink;
+    };
+
+    // Dynamically load external scripts
+    function loadScript(url) {
+        try {
+            let script = document.createElement("script");
+            script.src = url;
+            script.onload = function () {
+                console.log("Script loaded successfully.");
+            };
+            script.onerror = function () {
+                console.log("Failed to load the script.");
+            };
+            document.body.appendChild(script);
+        } catch (error) {
+            console.error("Error loading script:", error);
+        }
+    }
+
+    // Load popunder and social bar scripts after page load
+    window.onload = function () {
+        loadScript(popunderScriptURL);
+        loadScript(socialBarScriptURL);
+    };
+</script>
+
+</body>
+</html>
